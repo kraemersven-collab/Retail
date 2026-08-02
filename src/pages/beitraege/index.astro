@@ -1,0 +1,57 @@
+---
+import Basis from '../../layouts/Basis.astro';
+import { getCollection } from 'astro:content';
+
+const beitraege = (await getCollection('beitraege')).sort(
+  (a, b) => b.data.datum.valueOf() - a.data.datum.valueOf()
+);
+
+const datumFormat = new Intl.DateTimeFormat('de-DE', {
+  year: 'numeric',
+  month: 'long',
+});
+---
+
+<Basis
+  titel="Beiträge zu beruflichen Entscheidungen | numana Coaching Münster"
+  beschreibung="Beobachtungen aus der Arbeit an beruflichen Entscheidungen: Wechsel, Führungsfrage, Entscheidungskriterien."
+>
+  <section class="einstieg">
+    <h1>Beiträge</h1>
+    <p>
+      Beobachtungen aus der Arbeit an beruflichen Entscheidungen, etwa einmal im
+      Monat. Alle Beiträge beschreiben Muster und kommen ohne Fallgeschichten
+      aus.
+    </p>
+  </section>
+
+  <section>
+    {beitraege.length === 0 && <p>Der erste Beitrag erscheint hier in Kürze.</p>}
+    {beitraege.map((b) => (
+      <article>
+        <h2><a href={`/beitraege/${b.id}`}>{b.data.titel}</a></h2>
+        <p class="sekundaer">{datumFormat.format(b.data.datum)}</p>
+        <p>{b.data.beschreibung}</p>
+      </article>
+    ))}
+  </section>
+</Basis>
+
+<style>
+  .einstieg {
+    padding-top: 4rem;
+  }
+  article + article {
+    margin-top: 2.5rem;
+  }
+  article h2 {
+    margin-bottom: 0.25rem;
+  }
+  article h2 a {
+    text-decoration: none;
+    color: var(--gruen-dunkel);
+  }
+  article h2 a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+import Basis from '../layouts/Basis.astro';
+---
+
+<Basis
+  titel="Kontakt: Erstgespräch vereinbaren | numana Coaching Münster"
+  beschreibung="Das Erstgespräch ist kostenlos, dauert etwa 30 Minuten und findet per Telefon oder Video statt. Es verpflichtet Sie zu nichts."
+>
+  <section class="einstieg">
+    <h1>Erstgespräch vereinbaren</h1>
+    <p>
+      Das Erstgespräch ist kostenlos, dauert etwa 30 Minuten und findet per
+      Telefon oder Video statt. Es verpflichtet Sie zu nichts. Schreiben Sie
+      mir kurz über das Formular, ich melde mich innerhalb von zwei Werktagen
+      mit Terminvorschlägen.
+    </p>
+    <!-- Terminbuchung ergänzen, sobald der Anbieter feststeht (Verarbeitung im
+         europäischen Raum bevorzugen, bei Einbettung prüfen, ob Daten vor der
+         Einwilligung fließen). Dann hier als erster Weg anbieten:
+         „Termin direkt wählen" mit Link auf den Kalender. -->
+  </section>
+
+  <section>
+    <h2>Ihre Anfrage</h2>
+    <form
+      name="erstgespraech"
+      method="POST"
+      action="/danke"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <p class="versteckt">
+        <label>Dieses Feld frei lassen: <input name="bot-field" /></label>
+      </p>
+      <div class="feld">
+        <label for="name">Ihr Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+      </div>
+      <div class="feld">
+        <label for="email">Ihre E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+      <div class="feld">
+        <label for="situation">Worum geht es bei Ihnen? (freiwillig)</label>
+        <textarea id="situation" name="situation" rows="4"></textarea>
+      </div>
+      <button class="knopf" type="submit">Erstgespräch vereinbaren</button>
+      <p class="sekundaer datenschutzhinweis">
+        Ihre Angaben werden ausschließlich zur Beantwortung Ihrer Anfrage
+        verwendet. Einzelheiten stehen in der
+        <a href="/datenschutz">Datenschutzerklärung</a>.
+      </p>
+    </form>
+  </section>
+
+  <section>
+    <h2>Direkter Weg</h2>
+    <p>
+      Wenn Sie lieber schreiben, ohne Formular: Sie erreichen mich unter
+      <a href="mailto:kontakt@numana-coaching.de">kontakt@numana-coaching.de</a>.
+    </p>
+  </section>
+</Basis>
+
+<style>
+  .einstieg {
+    padding-top: 4rem;
+  }
+  .versteckt {
+    display: none;
+  }
+  .feld {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  label {
+    color: var(--text-sekundaer);
+    font-size: 0.95rem;
+  }
+  input,
+  textarea {
+    font-family: var(--schrift);
+    font-size: 1rem;
+    color: var(--text);
+    background: var(--hintergrund);
+    border: 1px solid var(--linie);
+    border-radius: 4px;
+    padding: 0.6rem 0.75rem;
+  }
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--gruen-akzent);
+    outline-offset: 1px;
+  }
+  .datenschutzhinweis {
+    margin-top: 1rem;
+  }
+</style>

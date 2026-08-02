@@ -1,0 +1,108 @@
+---
+import Basis from '../layouts/Basis.astro';
+import Erstgespraech from '../components/Erstgespraech.astro';
+---
+
+<Basis
+  titel="Ablauf und Preise: Coaching in Münster | numana"
+  beschreibung="Erstgespräch, typischer Verlauf, Format, Preise und Ausfallregel. Alle Angaben vorab, damit Sie in Ruhe entscheiden können."
+>
+  <section class="einstieg">
+    <h1>Ablauf und Preise</h1>
+    <p>
+      Hier steht alles, was Sie vor einer Anfrage wissen wollen: wie die Arbeit
+      beginnt, wie sie verläuft, was sie kostet und für wen sie sich eignet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Das Erstgespräch</h2>
+    <p>
+      Am Anfang steht ein Erstgespräch: kostenlos, etwa 30 Minuten, per Telefon
+      oder Video. Sie schildern Ihre Situation, ich erkläre, wie ich arbeite, und
+      wir prüfen beide, ob die Zusammenarbeit passt. Danach entscheiden Sie in
+      Ruhe. Es verpflichtet Sie zu nichts.
+    </p>
+    <Erstgespraech kompakt />
+  </section>
+
+  <section>
+    <h2>Der typische Verlauf</h2>
+    <p>
+      Die meisten Anliegen brauchen vier bis sechs Sitzungen von 60 Minuten, im
+      Abstand von zwei bis drei Wochen. Zwischen den Terminen arbeiten Sie mit
+      einem Reflexionsblatt weiter, das erfahrungsgemäß etwa eine halbe Stunde
+      pro Woche braucht. Nach der dritten Sitzung ziehen wir gemeinsam
+      Zwischenbilanz und entscheiden, was noch fehlt.
+    </p>
+    <!-- Arbeitsprobe ergänzen: ein Beispiel-Reflexionsblatt als PDF
+         (erstellt über den Skill numana-dokumente) unter public/ ablegen
+         und hier ohne E-Mail-Zwang verlinken. -->
+  </section>
+
+  <section>
+    <h2>Das Format</h2>
+    <p>
+      Die Sitzungen finden per Video statt oder vor Ort in Münster. Beide
+      Formate lassen sich innerhalb einer Zusammenarbeit mischen, je nachdem,
+      was in Ihren Kalender passt.
+    </p>
+  </section>
+
+  <section>
+    <h2>Die Preise</h2>
+    <ul>
+      <li>Erstgespräch, etwa 30 Minuten: kostenlos</li>
+      <li>Eine Sitzung, 60 Minuten: 160 Euro</li>
+      <li>Paket aus fünf Sitzungen: 750 Euro</li>
+    </ul>
+    <p>
+      Sie erhalten nach jeder Sitzung eine Rechnung, zahlbar per Überweisung
+      innerhalb von 14 Tagen. Beim Paket stelle ich die Rechnung zu Beginn der
+      Zusammenarbeit. Termine lassen sich bis 24 Stunden vorher kostenfrei
+      verschieben; bei späterer Absage wird die Sitzung berechnet.
+    </p>
+  </section>
+
+  <section>
+    <h2>Wann ich nicht die Richtige bin</h2>
+    <p>
+      Coaching arbeitet an einer anstehenden beruflichen Entscheidung. In
+      einigen Situationen sind andere Stellen die besseren:
+    </p>
+    <ul>
+      <li>
+        Bei psychischen Erkrankungen und in akuten Krisen gehört die Begleitung
+        in eine Psychotherapie. Termine vermittelt die Terminservicestelle unter
+        116 117.
+      </li>
+      <li>
+        Konflikte in der Partnerschaft, auch wenn eine Berufsentscheidung sie
+        auslöst, gehören in eine Paarberatung.
+      </li>
+      <li>
+        Für Lebensläufe, Anschreiben und Gesprächstraining gibt es
+        spezialisierte Bewerbungsberatungen.
+      </li>
+    </ul>
+    <p>
+      Trifft eines davon Ihre Situation, sage ich das im Erstgespräch offen und
+      nenne Ihnen eine passende Anlaufstelle.
+    </p>
+  </section>
+
+  <section>
+    <h2>Der nächste Schritt</h2>
+    <p>Wenn das für Sie passt, beginnt es mit einem Gespräch.</p>
+    <Erstgespraech />
+  </section>
+</Basis>
+
+<style>
+  .einstieg {
+    padding-top: 4rem;
+  }
+  .einstieg p {
+    color: var(--text-sekundaer);
+  }
+</style>

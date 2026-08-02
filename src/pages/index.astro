@@ -1,0 +1,133 @@
+---
+import Basis from '../layouts/Basis.astro';
+import Erstgespraech from '../components/Erstgespraech.astro';
+---
+
+<Basis
+  titel="Systemisches Coaching in Münster für berufliche Entscheidungen | numana"
+  beschreibung="Für Frauen in analytischen Berufen, die vor einem beruflichen Wechsel oder einer Führungsrolle stehen und klären wollen, wonach sie entscheiden."
+>
+  <section class="einstieg">
+    <h1>Sie haben alle Argumente. Die Entscheidung fehlt trotzdem.</h1>
+    <p>
+      Systemisches Coaching in Münster und online, für Frauen in analytischen Berufen
+      vor einem beruflichen Wechsel oder einer Führungsrolle.
+    </p>
+    <Erstgespraech />
+  </section>
+
+  <section>
+    <h2>Woran es hängt</h2>
+    <p>
+      Abends gehen Sie die Argumente noch einmal durch, und beide Seiten tragen.
+      Sie recherchieren allein, meist spät, und behalten die Frage vorerst für
+      sich. Meinungen haben Sie genug gehört: von der Chefin, vom Partner, aus
+      dem Freundeskreis. Was noch fehlt, ist ein Maßstab, der Ihrer ist.
+    </p>
+    <p class="markensatz">
+      Wir klären nicht, ob Sie es können. Wir klären, wonach Sie entscheiden.
+    </p>
+    <Erstgespraech kompakt />
+  </section>
+
+  <section>
+    <h2>Worum es bei Ihnen geht</h2>
+    <p>Zwei Entscheidungen führen in diese Praxis.</p>
+    <div class="tuer">
+      <h3>Der berufliche Wechsel</h3>
+      <p>
+        Die aktuelle Stelle trägt noch, und trotzdem wandert der Blick zu den
+        Ausschreibungen. Für das Bleiben gibt es gute Gründe, für das Gehen auch.
+        In der Arbeit sortieren wir, welche dieser Gründe Ihre sind und welche nur
+        vertraut klingen.
+      </p>
+      <p><a href="/wechsel">Mehr zum beruflichen Wechsel</a></p>
+    </div>
+    <div class="tuer">
+      <h3>Die Führungsrolle</h3>
+      <p>
+        Das Angebot liegt vor, oder es deutet sich an. Sie sehen, was die Rolle
+        kostet, und Sie sehen, was sie öffnet. Wir klären, ob Sie die Rolle wollen
+        und woran Sie das erkennen.
+      </p>
+      <p><a href="/fuehrung">Mehr zur Führungsfrage</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Wie hier gearbeitet wird</h2>
+    <p>
+      Am Anfang steht ein kostenloses Erstgespräch von etwa 30 Minuten. Danach
+      arbeiten wir in vier bis sechs Sitzungen im Abstand von zwei bis drei Wochen,
+      online oder in Münster. Zwischen den Terminen halten Sie Ihre Beobachtungen
+      mit einem Reflexionsblatt fest; nach der dritten Sitzung ziehen wir
+      gemeinsam Zwischenbilanz.
+    </p>
+    <p>
+      In den Sitzungen arbeiten wir an Ihren Entscheidungskriterien: an denen,
+      die tragen, an denen, die Sie übernommen haben, und an dem Unterschied
+      zwischen Können und Wollen.
+    </p>
+    <p>
+      Coaching ist Arbeit an einer anstehenden beruflichen Entscheidung. Bei
+      psychischen Erkrankungen und in akuten Krisen ist eine Psychotherapie der
+      richtige Rahmen; in diesem Fall verweise ich weiter.
+    </p>
+    <p><a href="/ablauf">Ablauf und Preise im Detail</a></p>
+    <Erstgespraech kompakt />
+  </section>
+
+  <section>
+    <h2>Wer hier arbeitet</h2>
+    <!-- Foto ergänzen: erwachsene Frau in Arbeitskleidung an einem ruhigen Ort,
+         als WebP unter public/bilder/, mit Alternativtext. -->
+    <p>
+      Corinna Krämer, systemische Coach. Über zwanzig Jahre in Banken,
+      Versicherungen und im Ingenieurwesen, zuletzt als Prokuristin. Sie hat Teams
+      geführt, und sie hat nach langem Abwägen selbst gewechselt. Beide
+      Entscheidungen kennt sie aus eigener Erfahrung. Die Ausbildung im
+      systemischen Coaching hat sie berufsbegleitend abgeschlossen.
+    </p>
+    <p><a href="/ueber">Über Corinna Krämer</a></p>
+  </section>
+
+  <section>
+    <h2>Was es kostet</h2>
+    <p>
+      Eine Sitzung von 60 Minuten kostet 160 Euro, ein Paket aus fünf Sitzungen
+      750 Euro; alle Angaben zu Abrechnung und Ausfallregel stehen unter
+      <a href="/ablauf">Ablauf und Preise</a>.
+    </p>
+    <Erstgespraech kompakt />
+  </section>
+
+  <section>
+    <h2>Wonach entscheiden Sie?</h2>
+    <p>
+      Wenn diese Frage Sie schon eine Weile begleitet, ist das Erstgespräch ein
+      geordneter erster Schritt: Sie schildern Ihre Situation, und wir prüfen
+      gemeinsam, ob die Arbeit passt.
+    </p>
+    <Erstgespraech />
+  </section>
+</Basis>
+
+<style>
+  .einstieg {
+    padding-top: 4rem;
+  }
+  .einstieg p {
+    color: var(--text-sekundaer);
+    margin-top: 1rem;
+  }
+  .markensatz {
+    color: var(--gruen-dunkel);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+  }
+  .tuer + .tuer {
+    margin-top: 2rem;
+  }
+</style>

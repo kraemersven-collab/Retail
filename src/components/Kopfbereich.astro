@@ -1,0 +1,63 @@
+---
+const pfad = Astro.url.pathname;
+const punkte = [
+  { titel: 'Wechsel', pfad: '/wechsel' },
+  { titel: 'Führung', pfad: '/fuehrung' },
+  { titel: 'Ablauf und Preise', pfad: '/ablauf' },
+  { titel: 'Über mich', pfad: '/ueber' },
+  { titel: 'Kontakt', pfad: '/kontakt' },
+];
+const aktiv = (p) => pfad === p || pfad === p + '/';
+---
+
+<header>
+  <div class="innen">
+    <a class="marke" href="/" aria-label="numana, zur Startseite">numana</a>
+    <nav aria-label="Hauptnavigation">
+      {punkte.map((p) => (
+        <a href={p.pfad} aria-current={aktiv(p.pfad) ? 'page' : undefined}>{p.titel}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--linie);
+  }
+  .innen {
+    max-width: var(--breite);
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+  }
+  .marke {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--gruen-dunkel);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    margin-right: auto;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.1rem;
+  }
+  nav a {
+    color: var(--text-sekundaer);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.15rem 0;
+  }
+  nav a:hover {
+    color: var(--gruen-dunkel);
+  }
+  nav a[aria-current='page'] {
+    color: var(--gruen-dunkel);
+    border-bottom: 2px solid var(--gruen-akzent);
+  }
+</style>
