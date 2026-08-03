@@ -729,6 +729,122 @@ a.nav-logo, a.nav-cta { display: inline-block; }
 .next-a { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-mid); margin-top: 0.4rem; }
 @media (max-width: 860px) { .next-grid { grid-template-columns: 1fr; } }
 
+/* ===== Namensabschnitt: Woher der Name kommt =====
+   Mobile zuerst. Schrift wird geerbt, hier bewusst keine font-family.
+   Variablennamen auf die bestehenden Seitentokens umgebogen,
+   Fallbacks aus dem gelieferten Snippet belassen.
+   ================================================================= */
+
+.herkunft {
+  background: var(--sand, #FDFCFA);
+  padding: 64px 20px;
+}
+
+.herkunft-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.herkunft-eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-mid, #228483);
+}
+
+.herkunft-titel {
+  margin: 0 0 40px;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--teal, #1D5B58);
+}
+
+/* --- die drei Schritte --- */
+
+.herkunft-schritte {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--teal-bright, #229BA8);
+}
+
+.herkunft-schritt {
+  position: relative;
+  padding: 0 0 32px 24px;
+}
+
+.herkunft-schritt:last-child {
+  padding-bottom: 0;
+}
+
+.herkunft-wort {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--teal, #1D5B58);
+}
+
+/* Der Zielschritt wird nur leicht hervorgehoben, nicht dekoriert. */
+.herkunft-schritt--ziel .herkunft-wort {
+  color: var(--teal-mid, #228483);
+}
+
+.herkunft-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink, #333333);
+}
+
+.herkunft-text--klein {
+  font-size: 0.9375rem;
+  color: var(--ink-soft, #555555);
+}
+
+/* --- Methodenblöcke, nachgeordnet --- */
+
+.herkunft-methoden {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(34, 132, 131, 0.2);
+  display: grid;
+  gap: 32px;
+}
+
+.herkunft-label {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-mid, #228483);
+}
+
+/* --- ab Tablet --- */
+
+@media (min-width: 720px) {
+  .herkunft {
+    padding: 96px 32px;
+  }
+
+  .herkunft-titel {
+    font-size: 2.125rem;
+    margin-bottom: 48px;
+  }
+
+  .herkunft-schritt {
+    padding-left: 32px;
+    padding-bottom: 36px;
+  }
+
+  .herkunft-methoden {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
 /* ---- MOBILE-KORREKTUREN ----
    Steht am Dateiende, damit es die weiter oben definierten Basisregeln
    (Ergebnis-Block, Hero-Statistik) bei gleicher Spezifität überschreibt. */
