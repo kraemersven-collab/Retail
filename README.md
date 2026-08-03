@@ -23,10 +23,12 @@ Umsetzungspaket; die Sitemap erzeugt `@astrojs/sitemap` beim Build.
 
 ## Offene Punkte vor Livegang
 
-1. **Bilddateien.** `numana-logo-nav.png`, `corinna-portrait.jpg` und
-   `corinna-about-real.jpg` nach `public/` legen (Reserve: `numana-logo.png`,
-   `numana-logo-transparent.png`). Bis dahin blendet die Seite fehlende Bilder
-   aus; die Navigation zeigt dann den Schriftzug numana.
+1. **Bilddateien.** `numana-logo-nav.png`, `corinna-portrait.jpg`,
+   `corinna-about-real.jpg` und `linc-personality-profiler.png` (Logo bei der
+   LINC-Qualifikation auf der Über-mich-Seite) nach `public/` legen
+   (Reserve: `numana-logo.png`, `numana-logo-transparent.png`). Bis dahin
+   blendet die Seite fehlende Bilder aus; die Navigation zeigt dann den
+   Schriftzug numana.
 2. **Kontaktformular.** Der Formspree-Endpoint in `src/pages/kontakt.astro`
    ist ein Platzhalter (`mwvgrlvl`) und muss vor Livegang ersetzt werden,
    alternativ PHP-Versand beim Hoster.
