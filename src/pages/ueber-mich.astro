@@ -1,0 +1,168 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Corinna Krämer',
+    jobTitle: 'Business & Life Coach',
+    description:
+      'Systemischer Business- und Life Coach in Münster. Bankkauffrau, Versicherungsfachfrau, Diplom-Kauffrau, ehemalige Prokuristin mit über zwei Jahrzehnten Führungserfahrung.',
+    worksFor: {
+      '@type': 'ProfessionalService',
+      name: 'numana coaching & consulting',
+      url: 'https://numana-coaching.de/',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Münster',
+      addressRegion: 'Nordrhein-Westfalen',
+      addressCountry: 'DE',
+    },
+    knowsAbout: [
+      'Business Coaching',
+      'Life Coaching',
+      'Führungskräfte-Coaching',
+      'berufliche Neuorientierung',
+      'LINC Personality Profiler',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Was passiert bei numana konkret?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Wir arbeiten in drei Schritten. Erst sortieren wir Ihre Lage: Was steht an, bis wann, und wer hat außer Ihnen ein Interesse daran. Dann machen wir mit dem LINC-Profil sichtbar, wie Sie funktionieren — Ihre Motive, Ihre Kompetenzen, Ihre Muster. Und dann arbeiten wir heraus, wonach Sie diese Entscheidung eigentlich treffen. Ich bringe Methode, Struktur und ehrliches Feedback. Die Entscheidung bleibt bei Ihnen, und das ist gut so: Nur so können Sie später dazu stehen.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Mit welchen Frauen arbeiten Sie?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Mit Frauen, vor denen ein konkreter beruflicher Schritt liegt. Eine Stelle, die zur Debatte steht. Eine Führungsrolle, die angeboten wurde. Ein Gedanke an die Selbständigkeit, der seit Monaten im Raum steht und nicht kleiner wird. Fast alle arbeiten in Berufen, in denen analysiert und gerechnet wird — und fast alle stellen fest, dass ihnen genau diese Stärke bei der eigenen Entscheidung nicht weiterhilft.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Warum ausgerechnet Sie?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Weil ich alle drei Türen von innen kenne. Ich habe geführt, Zahlen verantwortet, Prokura gehabt — ich weiß, was die Führungsfrage wirklich bedeutet und was sie kostet. Ich habe nach über zwei Jahrzehnten die Richtung gewechselt. Und ich habe mich selbständig gemacht, nach zwei Jahren Abwägen und mit einer Kalkulation, die ich selbst gerechnet habe. Nichts davon habe ich gelesen. Ich habe es entschieden.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Basis
+  titel="Über mich – Corinna Krämer, Coach in Münster | numana"
+  beschreibung="Corinna Krämer: Bankkauffrau, Versicherungsfachfrau, Diplom-Kauffrau und ehemalige Prokuristin — Gründerin von numana, Business- & Life Coaching in Münster. Über zwei Jahrzehnte Führungserfahrung, zertifizierte LINC-Diagnostik, ausgebildet am Dr. Bock Institute Berlin."
+  jsonld={jsonld}
+>
+  <section style="padding:5rem 0">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="divider"></div>
+          <p class="eyebrow">Über mich</p>
+          <h2>25 Jahre Zahlen.<br /><em>Sie haben mich geprägt — und sie haben nicht alles beantwortet.</em></h2>
+          <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:1.25rem;line-height:1.78">
+            Ich bin Corinna Krämer, Bankkauffrau, Versicherungsfachfrau, Diplom-Kauffrau, ehemalige Prokuristin. Über zwei Jahrzehnte in Banken, Versicherungen und im Ingenieurwesen. Teams geführt, Zahlen verantwortet.
+          </p>
+          <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:0.875rem;line-height:1.78">
+            Die Zahlen konnte ich. Die Frage, die irgendwann kam, ließ sich damit nicht beantworten. Aus dieser Frage ist nach fast zwei Jahren des Abwägens numana entstanden.
+          </p>
+          <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:0.875rem;line-height:1.78">
+            Ich bin Mitte 40, verheiratet, habe zwei Teenager und lebe in Münster.
+          </p>
+          <div class="divider"></div>
+
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem">
+            <li style="display:flex;gap:0.875rem;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
+              Zertifizierter LINC Personality Profiler Coach (Persönlichkeitsdiagnostik)
+            </li>
+            <li style="display:flex;gap:0.875rem;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
+              Zertifizierung zur systemischen Business- und Life Coachin am Exzellenzzentrum Coaching des Dr. Bock Institute (DBI) Berlin, Abschluss September 2026
+            </li>
+            <li style="display:flex;gap:0.875rem;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
+              In Ausbildung ab Oktober 2026: Master Coach (DBI Berlin), Methoden MINDFUCK® und Inner Change®
+            </li>
+          </ul>
+
+          <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:1.5rem;line-height:1.78">
+            Zwei berufliche Entscheidungen habe ich selbst getroffen, nicht gelesen. Die erste, als ich Führung übernommen habe. Die zweite, als ich numana gegründet habe. Beide Male ging es nicht darum, ob ich es kann. Es ging darum, wonach ich entscheide.
+          </p>
+
+          <p style="font-size:0.83rem;color:var(--ink-soft);margin-top:1.5rem;line-height:1.78">
+            Als Ort für High-End-Coaching ist das Dr. Bock Institute die direkte Nachfolge der
+            renommierten Dr. Bock Coaching Akademie (DBCA), die 2008 von Dr. Petra Bock gegründet
+            und vielfach als „Harvard des Coachings“ bezeichnet wurde.
+          </p>
+
+          <div class="bock-quote">
+            <p class="bq-lead">Ein Satz aus meiner Ausbildung bei Dr. Petra Bock bringt es für mich auf den Punkt:</p>
+            <blockquote>Nach dem technischen Fortschritt muss der menschliche Fortschritt folgen.</blockquote>
+            <p class="bq-close">Genau hier setze ich mit numana an. Da, wo Zahlen, Analysen und Systeme nicht weiterhelfen, sondern der Mensch gefragt ist: im Urteil, in der Haltung, in der Entscheidung.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="split-photo">
+            <img src="/corinna-about-real.jpg" alt="Corinna Krämer, Business und Life Coach, Münster" onerror="this.style.display='none'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <p class="eyebrow">Das Instrument</p>
+      <h2>Persönlichkeit, Motive, <em>Kompetenzen.</em></h2>
+      <p style="font-size:0.85rem;color:var(--ink-soft);max-width:48ch;margin-top:0.875rem">
+        Ich setze den LINC Personality Profiler (Persönlichkeitsdiagnostik) als zentrales Instrument ein. So sieht ein Ergebnis aus — hier ein Beispielprofil, nicht das einer realen Person.
+      </p>
+      <div class="linc-outer" style="margin-top:2rem;border:0.5px solid var(--rule)">
+        <div>
+          <div class="linc-section-head">Motive · Beispiel</div>
+          <div class="linc-row"><span class="linc-k">Unabhängigkeit</span><span class="linc-v">maximal</span></div>
+          <div class="linc-row" style="border-bottom:none"><span class="linc-k">Beziehung</span><span class="linc-v">hoch</span></div>
+        </div>
+        <div>
+          <div class="linc-section-head">Top-Kompetenzen · Beispiel</div>
+          <div class="linc-row"><span class="linc-k">Analysieren</span><span class="linc-v">stark ausgeprägt</span></div>
+          <div class="linc-row"><span class="linc-k">Reflexionsvermögen</span><span class="linc-v">stark ausgeprägt</span></div>
+          <div class="linc-row" style="border-bottom:none"><span class="linc-k">Durchsetzung</span><span class="linc-v">stark ausgeprägt</span></div>
+        </div>
+      </div>
+      <p class="linc-note">Beispielhafte Darstellung. Ihr eigener Report ist deutlich ausführlicher — und gehört ausschließlich Ihnen.</p>
+    </div>
+  </section>
+  <section style="padding:5rem 0">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">Drei Fragen an Corinna</p>
+      <h2>Im Gespräch.<br /><em>Ohne Umschweife.</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Was passiert bei numana konkret?</p>
+          <p class="faq-a">Wir arbeiten in drei Schritten. Erst sortieren wir Ihre Lage: Was steht an, bis wann, und wer hat außer Ihnen ein Interesse daran. Dann machen wir mit dem LINC-Profil sichtbar, wie Sie funktionieren — Ihre Motive, Ihre Kompetenzen, Ihre Muster. Und dann arbeiten wir heraus, wonach Sie diese Entscheidung eigentlich treffen. Ich bringe Methode, Struktur und ehrliches Feedback. Die Entscheidung bleibt bei Ihnen, und das ist gut so: Nur so können Sie später dazu stehen.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Mit welchen Frauen arbeiten Sie?</p>
+          <p class="faq-a">Mit Frauen, vor denen ein konkreter beruflicher Schritt liegt. Eine Stelle, die zur Debatte steht. Eine Führungsrolle, die angeboten wurde. Ein Gedanke an die Selbständigkeit, der seit Monaten im Raum steht und nicht kleiner wird. Fast alle arbeiten in Berufen, in denen analysiert und gerechnet wird — und fast alle stellen fest, dass ihnen genau diese Stärke bei der eigenen Entscheidung nicht weiterhilft.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Warum ausgerechnet Sie?</p>
+          <p class="faq-a">Weil ich alle drei Türen von innen kenne. Ich habe geführt, Zahlen verantwortet, Prokura gehabt — ich weiß, was die Führungsfrage wirklich bedeutet und was sie kostet. Ich habe nach über zwei Jahrzehnten die Richtung gewechselt. Und ich habe mich selbständig gemacht, nach zwei Jahren Abwägen und mit einer Kalkulation, die ich selbst gerechnet habe. Nichts davon habe ich gelesen. Ich habe es entschieden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Basis>

@@ -1,0 +1,139 @@
+---
+import Basis from '../layouts/Basis.astro';
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Business & Life Coaching',
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'numana coaching & consulting',
+      url: 'https://numana-coaching.de/',
+    },
+    areaServed: ['Münster', 'Münsterland'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Coaching-Angebot',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'numana Klarheit',
+            description:
+              'Der eigentliche Prozess: kostenloses Erstgespräch, LINC-Persönlichkeitsdiagnostik mit Report, separates Auswertungsgespräch (90 Min.) und drei Coaching-Einheiten (je 90 Min.). Festpreis 1.290 Euro, zahlbar in zwei Raten.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'numana Standort',
+            description:
+              'Einstieg: LINC-Persönlichkeitsdiagnostik mit ausführlichem Report und ein Auswertungsgespräch von 90 Minuten. 390 Euro, wird auf das Kernprogramm angerechnet.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Sparring nach Bedarf',
+            description:
+              'Einzelne Sparring-Sitzung von 90 Minuten für 220 Euro, wenn später eine konkrete Frage ansteht. Kein Abo, keine Bindung.',
+          },
+        },
+      ],
+    },
+  },
+];
+---
+
+<Basis
+  titel="Angebot – Coaching-Programm mit LINC-Persönlichkeitsdiagnostik | numana Münster"
+  beschreibung="numana Klarheit: ein klar strukturiertes 1:1 Coaching-Programm mit LINC-Persönlichkeitsdiagnostik und definiertem Ergebnis. Für Frauen in Führung und analytischen Berufen. Münster & online. Kostenloses Erstgespräch."
+  jsonld={jsonld}
+>
+  <section style="padding:5rem 0">
+    <div class="container">
+      <p class="eyebrow">Angebot</p>
+      <h2>Ein klarer Weg.<br /><em>Mit definiertem Ende.</em></h2>
+      <p style="font-size:0.9rem;color:var(--ink-soft);max-width:52ch;margin-top:1.125rem;line-height:1.78">
+        numana ist ein strukturierter Prozess mit festem Umfang. Sie wissen von Anfang an, was Sie bekommen, wie lange es dauert und was es kostet.
+      </p>
+      <div class="divider"></div>
+
+      <div style="display:grid;grid-template-columns:1.25fr 0.75fr;gap:4rem;align-items:start;margin-top:2rem" class="angebot-grid">
+        <div>
+          <div class="tier">
+            <div class="tier-n">01</div>
+            <div>
+              <div class="tier-tag">Kernprogramm</div>
+              <div class="tier-name">numana Klarheit</div>
+              <p class="tier-desc">Der eigentliche Prozess. Wir bestimmen Ihren Standort, machen mit der LINC-Persönlichkeitsdiagnostik Ihre Motive und Kompetenzen sichtbar und arbeiten heraus, wonach die anstehende Entscheidung bei Ihnen zu treffen ist.</p>
+              <p class="tier-price"><strong>1.290 €</strong> · Festpreis für den gesamten Prozess.</p>
+              <p class="tier-incl">Enthalten: kostenloses Erstgespräch · LINC-Persönlichkeitsdiagnostik mit ausführlichem Report · separates Auswertungsgespräch (90 Min.) · drei Coaching-Einheiten (je 90 Min.) · Arbeitsmaterial zwischen den Terminen.</p>
+              <p class="tier-note">Keine Umsatzsteuer, keine Zusatzkosten. Zahlbar in zwei Raten.</p>
+            </div>
+          </div>
+          <div class="tier">
+            <div class="tier-n">02</div>
+            <div>
+              <div class="tier-tag">Einstieg</div>
+              <div class="tier-name">numana Standort</div>
+              <p class="tier-desc">Wenn Sie erst einmal wissen wollen, wonach Sie eigentlich entscheiden. Die LINC-Persönlichkeitsdiagnostik mit ausführlichem Report und ein Auswertungsgespräch von 90 Minuten. Ohne Verpflichtung, wie es weitergeht.</p>
+              <p class="tier-price"><strong>390 €</strong> · Wird angerechnet, wenn Sie danach das Kernprogramm buchen.</p>
+            </div>
+          </div>
+          <div class="tier">
+            <div class="tier-n">03</div>
+            <div>
+              <div class="tier-tag">Danach</div>
+              <div class="tier-name">Sparring nach Bedarf</div>
+              <p class="tier-desc">Wenn später eine konkrete Frage ansteht, buchen Sie eine einzelne Sitzung. Kein Abo, keine Bindung.</p>
+              <p class="tier-price"><strong>220 €</strong> · Einzelsitzung, 90 Minuten.</p>
+            </div>
+          </div>
+          <div style="margin-top:2rem">
+            <a class="btn btn-teal" href="/kontakt">Erstgespräch vereinbaren</a>
+          </div>
+        </div>
+        <div style="border:0.5px solid var(--rule);background:var(--paper)">
+          <div style="padding:1.25rem 1.5rem;border-bottom:0.5px solid var(--rule);background:var(--teal)">
+            <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:#9FE1CB">Coaching-Themen</span>
+          </div>
+          <div style="padding:0.7rem 1.5rem;font-size:0.8rem;color:var(--ink-soft);border-bottom:0.5px solid var(--rule)">Beruflich wechseln, ohne ins Nächstbeste zu rutschen</div><div style="padding:0.7rem 1.5rem;font-size:0.8rem;color:var(--ink-soft);border-bottom:0.5px solid var(--rule)">Die Führungsfrage: annehmen, ablehnen — oder erst einmal prüfen</div><div style="padding:0.7rem 1.5rem;font-size:0.8rem;color:var(--ink-soft);border-bottom:0.5px solid var(--rule)">Selbständigkeit: die Entscheidung davor, nicht der Businessplan</div><div style="padding:0.7rem 1.5rem;font-size:0.8rem;color:var(--ink-soft);border-bottom:0.5px solid var(--rule)">Eigene Kriterien statt übernommener Erwartungen</div><div style="padding:0.7rem 1.5rem;font-size:0.8rem;color:var(--ink-soft);border-bottom:none">Persönlichkeitsdiagnostik (LINC LPP) als Grundlage einer Entscheidung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="padding:5rem 0">
+    <div class="container">
+      <p class="eyebrow">Ablauf</p>
+      <h2>Fünf Schritte. <em>Fester Umfang.</em></h2>
+      <div class="steps steps-5">
+        <div class="step-box"><div class="step-n">01</div><div class="step-t">Erstgespräch</div><p class="step-d">30 Minuten, kostenlos. Wir prüfen, ob es passt.</p></div>
+        <div class="step-box"><div class="step-n">02</div><div class="step-t">LINC-Persönlich&shy;keits&shy;diagnostik</div><p class="step-d">Online-Fragebogen, ausführlicher Ergebnisreport. Persönlichkeit, Motive, Kompetenzen.</p></div>
+        <div class="step-box"><div class="step-n">03</div><div class="step-t">Auswertungsgespräch</div><p class="step-d">90 Minuten. Was das Profil über Ihre Kriterien sagt — und wo es Ihrer Selbsteinschätzung widerspricht.</p></div>
+        <div class="step-box"><div class="step-n">04</div><div class="step-t">Drei Coaching-Einheiten</div><p class="step-d">Je 90 Minuten, in Ihrem Tempo. Mit Arbeitsmaterial für die Zeit dazwischen.</p></div>
+        <div class="step-box"><div class="step-n">05</div><div class="step-t">Abschluss</div><p class="step-d">Ihre Frage. Ihre Kriterien. Ihr erster Schritt.</p></div>
+      </div>
+      <div class="scope">
+        <div class="scope-item"><span class="scope-k">Umfang</span><span class="scope-v">5 Termine</span></div>
+        <div class="scope-item"><span class="scope-k">Zeitraum</span><span class="scope-v">6 bis 8 Wochen</span></div>
+        <div class="scope-item"><span class="scope-k">Gesprächszeit</span><span class="scope-v">rund 6 Stunden</span></div>
+        <div class="scope-item scope-price"><span class="scope-k">Festpreis</span><span class="scope-v">1.290 €</span></div>
+      </div>
+      <p class="scope-note">Das Erstgespräch ist kostenlos. Im Festpreis enthalten sind die LINC-Persönlichkeitsdiagnostik, der vollständige Ergebnisreport und das Arbeitsmaterial. Keine Verlängerung, keine Zusatzkosten.</p>
+    </div>
+  </section>
+</Basis>
+
+<style>
+  @media (max-width: 860px) {
+    .angebot-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2.5rem !important;
+    }
+  }
+</style>
