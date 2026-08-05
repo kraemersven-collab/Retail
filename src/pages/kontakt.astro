@@ -1,11 +1,9 @@
 ---
 import Basis from '../layouts/Basis.astro';
 
-// TODO ZEEG_URL: Sobald das Zeeg-Konto existiert, hier den echten
-// Buchungslink eintragen (z. B. 'https://zeeg.me/corinna-kraemer/erstgespraech').
-// Solange der Wert leer ist, zeigt die Seite nur den E-Mail-Weg und
-// verlinkt nirgends ins Leere.
-const ZEEG_URL = '';
+// Zeeg-Buchungslink für das kostenlose Erstgespräch. Bleibt der Wert leer,
+// zeigt die Seite nur den E-Mail-Weg und verlinkt nirgends ins Leere.
+const ZEEG_URL = 'https://zeeg.me/kraemer/erstgespraech';
 
 const jsonld = [
   {

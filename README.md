@@ -29,10 +29,9 @@ Umsetzungspaket; die Sitemap erzeugt `@astrojs/sitemap` beim Build.
    (Reserve: `numana-logo.png`, `numana-logo-transparent.png`). Bis dahin
    blendet die Seite fehlende Bilder aus; die Navigation zeigt dann den
    Schriftzug numana.
-2. **Zeeg-Buchungslink.** Das Kontaktformular ist entfernt; gebucht wird über
-   Zeeg. Der Link fehlt noch: `ZEEG_URL` in `src/pages/kontakt.astro`
-   eintragen (TODO-Kommentar dort). Bis dahin zeigt die Kontaktseite nur den
-   E-Mail-Weg.
+2. **Zeeg-Buchung aktiv.** `ZEEG_URL` in `src/pages/kontakt.astro` ist auf
+   https://zeeg.me/kraemer/erstgespraech gesetzt; der Buchungs-Button ist
+   live auf der Kontaktseite.
 3. **numana-Prinzip.** Auskommentierter Platzhalter in
    `src/pages/index.astro` wartet auf den freigegebenen Text.
 4. **Deployment.** GitHub Action `.github/workflows/deploy.yml` lädt bei
