@@ -23,12 +23,10 @@ Umsetzungspaket; die Sitemap erzeugt `@astrojs/sitemap` beim Build.
 
 ## Offene Punkte vor Livegang
 
-1. **Bilddateien.** `numana-logo-nav.png`, `corinna-portrait.jpg`,
-   `corinna-about-real.jpg` und `linc-personality-profiler.png` (Logo bei der
-   LINC-Qualifikation auf der Über-mich-Seite) nach `public/` legen
-   (Reserve: `numana-logo.png`, `numana-logo-transparent.png`). Bis dahin
-   blendet die Seite fehlende Bilder aus; die Navigation zeigt dann den
-   Schriftzug numana.
+1. **Bilddateien vollständig.** Alle Bilder liegen in `public/`
+   (Porträt, Über-mich-Foto, Nav-Logo, LINC-Logo, Logo-Reserven).
+   Nach dem Fotoshooting Ende August werden Porträt und Über-mich-Foto
+   getauscht.
 2. **Zeeg-Buchung aktiv.** `ZEEG_URL` in `src/pages/kontakt.astro` ist auf
    https://zeeg.me/kraemer/erstgespraech gesetzt; der Buchungs-Button ist
    live auf der Kontaktseite.
