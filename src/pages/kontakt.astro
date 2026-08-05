@@ -1,6 +1,12 @@
 ---
 import Basis from '../layouts/Basis.astro';
 
+// TODO ZEEG_URL: Sobald das Zeeg-Konto existiert, hier den echten
+// Buchungslink eintragen (z. B. 'https://zeeg.me/corinna-kraemer/erstgespraech').
+// Solange der Wert leer ist, zeigt die Seite nur den E-Mail-Weg und
+// verlinkt nirgends ins Leere.
+const ZEEG_URL = '';
+
 const jsonld = [
   {
     '@context': 'https://schema.org',
@@ -31,35 +37,27 @@ const jsonld = [
       <p class="eyebrow">Kontakt</p>
       <h2>Lassen Sie uns <em>reden.</em></h2>
       <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:1rem;line-height:1.75">
-        Schreiben Sie mir. Das Erstgespräch ist kostenlos, unverbindlich und vertraulich. Kein Verkaufsgespräch.
+        Das Erstgespräch ist kostenlos, unverbindlich und vertraulich. Kein Verkaufsgespräch.
         Ich starte im Oktober 2026 mit numana. Erstgespräche sind bereits jetzt möglich.
       </p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0">
-        <a href="mailto:kraemer@numana-coaching.de" style="display:inline-block" class="btn btn-teal">kraemer@numana-coaching.de</a>
-      </div>
-      <p style="font-size:0.78rem;color:var(--ink-mute);margin-bottom:2.5rem">Münster, Nordrhein-Westfalen · Online und vor Ort</p>
-      <div id="form-area">
-        <!-- Formspree-Endpoint ist ein Platzhalter (mwvgrlvl) und muss vor
-             Livegang ersetzt werden, alternativ PHP-Versand. -->
-        <form id="cf" action="https://formspree.io/f/mwvgrlvl" method="POST" onsubmit="handleForm(event)" novalidate style="display:flex;flex-direction:column;gap:1.5rem">
-          <div>
-            <label style="display:block;font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem" for="fn">Name</label>
-            <input type="text" id="fn" name="name" placeholder="Ihr vollständiger Name" autocomplete="name" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--rule);background:var(--paper);font-family:var(--sans);font-size:0.88rem;color:var(--ink)" />
-            <div id="e-name" style="font-size:0.72rem;color:#c0392b;margin-top:0.3rem"></div>
+      {ZEEG_URL ? (
+        <>
+          <p style="font-size:0.88rem;color:var(--ink-soft);line-height:1.75">
+            Wählen Sie direkt einen Termin, oder schreiben Sie mir eine E-Mail.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0 1rem">
+            <a class="btn btn-teal" href={ZEEG_URL} target="_blank" rel="noopener">Erstgespräch buchen</a>
           </div>
-          <div>
-            <label style="display:block;font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem" for="fe">E-Mail</label>
-            <input type="email" id="fe" name="email" placeholder="ihre@email.de" autocomplete="email" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--rule);background:var(--paper);font-family:var(--sans);font-size:0.88rem;color:var(--ink)" />
-            <div id="e-email" style="font-size:0.72rem;color:#c0392b;margin-top:0.3rem"></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:0 0 2rem">
+            <a href="mailto:kraemer@numana-coaching.de" class="btn btn-ghost">kraemer@numana-coaching.de</a>
           </div>
-          <div>
-            <label style="display:block;font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem" for="fm">Nachricht</label>
-            <textarea id="fm" name="message" placeholder="Was bewegt Sie? Was möchten Sie verändern?" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--rule);background:var(--paper);font-family:var(--sans);font-size:0.88rem;color:var(--ink);min-height:130px;resize:vertical"></textarea>
-            <div id="e-msg" style="font-size:0.72rem;color:#c0392b;margin-top:0.3rem"></div>
-          </div>
-          <button type="submit" class="btn btn-teal" style="align-self:flex-start">Nachricht senden</button>
-        </form>
-      </div>
+        </>
+      ) : (
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0">
+          <a href="mailto:kraemer@numana-coaching.de" class="btn btn-teal">kraemer@numana-coaching.de</a>
+        </div>
+      )}
+      <p style="font-size:0.78rem;color:var(--ink-mute)">Münster, Nordrhein-Westfalen · Online und vor Ort</p>
     </div>
   </section>
   <section class="section-alt">
@@ -73,7 +71,7 @@ const jsonld = [
         </div>
         <div class="assure-item">
           <h3>Was mit Ihrem Persönlichkeitsprofil geschieht.</h3>
-          <p>Ihr LINC-Ergebnis gehört Ihnen. Sie erhalten den vollständigen Report. Er geht an niemanden sonst und wird nicht in KI-Werkzeuge eingegeben.</p>
+          <p>Ihr LINC-Ergebnis gehört Ihnen. Sie erhalten den vollständigen Report. Er geht an niemanden sonst.</p>
         </div>
         <div class="assure-item">
           <h3>Wo meine Arbeit aufhört.</h3>

@@ -1,0 +1,60 @@
+# Veröffentlicht die gebaute Seite per SFTP auf den IONOS-Webspace.
+# Läuft bei jedem Push auf main sowie manuell über "Run workflow".
+# Zugangsdaten kommen ausschließlich aus GitHub Secrets:
+#   SFTP_HOST, SFTP_USERNAME, SFTP_PASSWORD, SFTP_DIR
+# (Repository → Settings → Secrets and variables → Actions)
+name: Deploy zu IONOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zugangsdaten prüfen
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_DIR: ${{ secrets.SFTP_DIR }}
+        run: |
+          fehlt=""
+          [ -z "$SFTP_HOST" ] && fehlt="$fehlt SFTP_HOST"
+          [ -z "$SFTP_USERNAME" ] && fehlt="$fehlt SFTP_USERNAME"
+          [ -z "$SFTP_PASSWORD" ] && fehlt="$fehlt SFTP_PASSWORD"
+          [ -z "$SFTP_DIR" ] && fehlt="$fehlt SFTP_DIR"
+          if [ -n "$fehlt" ]; then
+            echo "::error::Deployment abgebrochen. Folgende GitHub Secrets fehlen:$fehlt. Eintragen unter: Repository → Settings → Secrets and variables → Actions → New repository secret."
+            exit 1
+          fi
+          echo "Alle vier Secrets sind vorhanden."
+
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Seite bauen
+        run: npm run build
+
+      - name: Per SFTP zu IONOS hochladen
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: dist/
+          # SFTP_DIR muss mit einem Schrägstrich enden, z. B. "/" oder "/numana/"
+          server-dir: ${{ secrets.SFTP_DIR }}

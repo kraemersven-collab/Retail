@@ -29,15 +29,20 @@ Umsetzungspaket; die Sitemap erzeugt `@astrojs/sitemap` beim Build.
    (Reserve: `numana-logo.png`, `numana-logo-transparent.png`). Bis dahin
    blendet die Seite fehlende Bilder aus; die Navigation zeigt dann den
    Schriftzug numana.
-2. **Kontaktformular.** Der Formspree-Endpoint in `src/pages/kontakt.astro`
-   ist ein Platzhalter (`mwvgrlvl`) und muss vor Livegang ersetzt werden,
-   alternativ PHP-Versand beim Hoster.
-3. **Buchungs-URLs.** Für Standortbestimmung und Kennenlerngespräch fehlen die
-   Links, alle Handlungsaufrufe zeigen auf `/kontakt`.
-4. **llms.txt** fehlt.
-5. **numana-Prinzip.** Auskommentierter Platzhalter in
+2. **Zeeg-Buchungslink.** Das Kontaktformular ist entfernt; gebucht wird über
+   Zeeg. Der Link fehlt noch: `ZEEG_URL` in `src/pages/kontakt.astro`
+   eintragen (TODO-Kommentar dort). Bis dahin zeigt die Kontaktseite nur den
+   E-Mail-Weg.
+3. **numana-Prinzip.** Auskommentierter Platzhalter in
    `src/pages/index.astro` wartet auf den freigegebenen Text.
-6. **Domain** numana-coaching.de noch nicht live geschaltet. Hosting laut
-   Datenschutzerklärung: IONOS; Deployment dorthin einrichten (z. B. GitHub
-   Action per FTP/SFTP) oder Datenschutztext an den tatsächlichen Hoster
-   anpassen.
+4. **Deployment.** GitHub Action `.github/workflows/deploy.yml` lädt bei
+   Push auf `main` per SFTP zu IONOS. Vorher die vier Secrets eintragen:
+   `SFTP_HOST`, `SFTP_USERNAME`, `SFTP_PASSWORD`, `SFTP_DIR`
+   (Settings → Secrets and variables → Actions). Erst Merge in `main`
+   plus Secrets lösen das erste Deployment aus.
+5. **Search Console.** Google-Verifizierungsdatei (`google….html`) nach
+   Erhalt unverändert in `public/` legen. Sitemap-Adresse zum Einreichen:
+   `https://numana-coaching.de/sitemap-index.xml`.
+6. **Rechtliche Prüfung.** Die Datenschutz-Änderungen (Formular raus,
+   E-Mail-Kontakt und Zeeg rein) sind im Code mit
+   `ZUR RECHTLICHEN PRÜFUNG` markiert.
