@@ -685,15 +685,11 @@ footer {
 
 /* ---- ANGEBOT PRODUKTTREPPE ---- */
 .tier {
-  display: grid; grid-template-columns: 3.5rem 1fr;
+  display: grid; grid-template-columns: 1fr;
   gap: 1.5rem; padding: 1.75rem 0;
   border-top: 0.5px solid var(--rule);
 }
 .tier:last-child { border-bottom: 0.5px solid var(--rule); }
-.tier-n {
-  font-family: var(--serif); font-size: 2rem; font-weight: 400;
-  color: var(--brand-rule); line-height: 1;
-}
 .tier-tag {
   font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ink-mute); margin-bottom: 0.4rem;
