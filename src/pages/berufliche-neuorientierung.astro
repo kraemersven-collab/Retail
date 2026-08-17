@@ -1,10 +1,52 @@
 ---
 import Basis from '../layouts/Basis.astro';
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Was kostet Coaching zur beruflichen Neuorientierung?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Das Erstgespräch ist kostenlos. numana Standort, die Zuordnung mit LINC-Diagnostik und Auswertungsgespräch, kostet 390 Euro und wird auf das Kernprogramm angerechnet. numana Klarheit kostet 1.290 Euro als Festpreis, zahlbar in zwei Raten. Einzelne Sparring-Sitzungen kosten 220 Euro. Alle Preise sind Endpreise, es fällt keine Umsatzsteuer an.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Wie lange dauert der Prozess?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Das Erstgespräch dauert 30 Minuten. numana Standort umfasst den LINC-Fragebogen und ein Auswertungsgespräch von 90 Minuten. Das Kernprogramm numana Klarheit umfasst fünf Termine über sechs bis acht Wochen. Nach jeder Stufe entscheiden Sie, ob und wie es weitergeht.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Gibt es Termine am Abend?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ja, Randzeiten und frühe Abendtermine sind möglich, online oder in Münster. Wenn Ihr Tag um 15 Uhr an der Kita endet, ist das eine Terminfrage.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Worin unterscheidet sich Coaching von einer Psychotherapie?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Coaching arbeitet an einer anstehenden beruflichen Entscheidung und an Verhalten im beruflichen Zusammenhang. Psychotherapie behandelt Erkrankungen; dafür ist sie der richtige Rahmen. Wenn ich im Erstgespräch den Eindruck habe, dass Sie dort besser aufgehoben sind, sage ich Ihnen das offen.',
+        },
+      },
+    ],
+  },
+];
 ---
 
 <Basis
   titel="Berufliche Neuorientierung Münster | numana coaching"
   beschreibung="Coaching für Frauen aus kaufmännischen und technischen Berufen, die sich beruflich neu sortieren. Strukturiert und diagnostisch, in Münster und online. Kostenloses Erstgespräch."
+  jsonld={jsonld}
 >
   <section>
     <div class="container" style="max-width:700px">
@@ -217,6 +259,30 @@ import Basis from '../layouts/Basis.astro';
   </section>
 
   <section class="section-alt">
+    <div class="container" style="max-width:700px">
+      <h2>Häufige Fragen</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Was kostet Coaching zur beruflichen Neuorientierung?</p>
+          <p class="faq-a">Das Erstgespräch ist kostenlos. numana Standort, die Zuordnung mit LINC-Diagnostik und Auswertungsgespräch, kostet 390 Euro und wird auf das Kernprogramm angerechnet. numana Klarheit kostet 1.290 Euro als Festpreis, zahlbar in zwei Raten. Einzelne Sparring-Sitzungen kosten 220 Euro. Alle Preise sind Endpreise, es fällt keine Umsatzsteuer an.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Wie lange dauert der Prozess?</p>
+          <p class="faq-a">Das Erstgespräch dauert 30 Minuten. numana Standort umfasst den LINC-Fragebogen und ein Auswertungsgespräch von 90 Minuten. Das Kernprogramm numana Klarheit umfasst fünf Termine über sechs bis acht Wochen. Nach jeder Stufe entscheiden Sie, ob und wie es weitergeht.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Gibt es Termine am Abend?</p>
+          <p class="faq-a">Ja, Randzeiten und frühe Abendtermine sind möglich, online oder in Münster. Wenn Ihr Tag um 15 Uhr an der Kita endet, ist das eine Terminfrage.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Worin unterscheidet sich Coaching von einer Psychotherapie?</p>
+          <p class="faq-a">Coaching arbeitet an einer anstehenden beruflichen Entscheidung und an Verhalten im beruflichen Zusammenhang. Psychotherapie behandelt Erkrankungen; dafür ist sie der richtige Rahmen. Wenn ich im Erstgespräch den Eindruck habe, dass Sie dort besser aufgehoben sind, sage ich Ihnen das offen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="container" style="max-width:700px">
       <h2>Der erste Schritt ist ein Gespräch von 30 Minuten.</h2>
       <p>

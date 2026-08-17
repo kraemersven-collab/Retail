@@ -84,24 +84,28 @@ const jsonld = [
           </p>
           <div class="divider"></div>
 
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem">
-            <li style="display:flex;gap:0.875rem;align-items:center;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
-              <span style="flex:1">Zertifizierter LINC Personality Profiler Coach (Persönlichkeitsdiagnostik)</span>
+          <p class="tier-tag" style="margin-bottom:0.25rem">Ausbildung und Weiterbildung</p>
+          <div class="quali-liste">
+            <div class="linc-row">
+              <span class="linc-k">LINC Personality Profiler Coach · Persönlichkeitsdiagnostik</span>
               <img
                 src="/linc-personality-profiler.png"
                 alt="LINC Personality Profiler, Logo"
-                style="height:34px;width:auto;flex:0 0 auto"
+                style="height:24px;width:auto;flex:0 0 auto"
                 loading="lazy"
                 onerror="this.style.display='none'"
               />
-            </li>
-            <li style="display:flex;gap:0.875rem;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
-              Zertifizierung zur systemischen Business- und Life Coachin am Exzellenzzentrum Coaching des Dr. Bock Institute (DBI) Berlin, Abschluss September 2026
-            </li>
-            <li style="display:flex;gap:0.875rem;font-size:0.83rem;color:var(--ink-soft);padding:0.875rem 1rem;border-left:2px solid var(--teal);background:var(--teal-bg)">
-              In Ausbildung ab Oktober 2026: Master Coach (DBI Berlin), Methoden MINDFUCK® und Inner Change®
-            </li>
-          </ul>
+              <span class="linc-v">zertifiziert</span>
+            </div>
+            <div class="linc-row">
+              <span class="linc-k">Systemische Business- und Life Coachin · Exzellenzzentrum Coaching des Dr. Bock Institute (DBI) Berlin</span>
+              <span class="linc-v">Abschluss September 2026</span>
+            </div>
+            <div class="linc-row">
+              <span class="linc-k">Master Coach (DBI Berlin) · Methoden MINDFUCK® und Inner Change®</span>
+              <span class="linc-v">ab Oktober 2026</span>
+            </div>
+          </div>
 
           <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:1.5rem;line-height:1.78">
             Zwei berufliche Entscheidungen habe ich selbst getroffen, nicht gelesen. Die erste, als ich Führung übernommen habe. Die zweite, als ich numana gegründet habe. Beide Male ging es nicht darum, ob ich es kann. Es ging darum, wonach ich entscheide.
@@ -151,3 +155,26 @@ const jsonld = [
     </div>
   </section>
 </Basis>
+
+<style>
+  .quali-liste :global(.linc-row) {
+    background: transparent;
+    padding: 0.8rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .quali-liste :global(.linc-row:first-child) {
+    border-top: 0.5px solid var(--rule);
+  }
+  .quali-liste :global(.linc-k) {
+    flex: 1 1 24ch;
+    line-height: 1.6;
+  }
+  .quali-liste :global(.linc-v) {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    white-space: nowrap;
+  }
+</style>
