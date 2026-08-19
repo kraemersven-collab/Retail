@@ -736,8 +736,13 @@ a.nav-logo, a.nav-cta { display: inline-block; }
 
 /* ---- HERO-FOTO KLEINER ---- */
 .hero-photo-links .hero-photo { height: 100%; aspect-ratio: auto; min-height: 34rem; }
+/* Variante für lange Textspalten (Über mich): Foto oben bündig,
+   festes Hochformat statt Streckung auf die volle Texthöhe. */
+.hero-photo-hoch { align-self: start; }
+.hero-photo-hoch .hero-photo { height: auto; aspect-ratio: 3/4; min-height: 0; }
 @media (max-width: 860px) {
-  .hero-photo-links .hero-photo { aspect-ratio: 4/5; height: auto; min-height: 0; }
+  .hero-photo-links .hero-photo,
+  .hero-photo-hoch .hero-photo { aspect-ratio: 4/5; height: auto; min-height: 0; }
 }
 
 /* ---- WEITERLESEN-KARTEN ---- */
