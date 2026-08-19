@@ -224,8 +224,13 @@ section { padding: 5rem 0; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
-  gap: 4rem; align-items: center;
+  grid-template-areas: 'kopf foto' 'rest foto';
+  column-gap: 4rem; row-gap: 0;
+  align-items: center;
 }
+.hero-kopf { grid-area: kopf; align-self: end; }
+.hero-rest { grid-area: rest; align-self: start; }
+.hero-grid .hero-photo-wrap { grid-area: foto; }
 .hero-eyebrow {
   font-size: 0.62rem; letter-spacing: 0.26em;
   text-transform: uppercase; color: var(--teal-mid);
@@ -578,6 +583,7 @@ footer {
 /* ---- RESPONSIVE ---- */
 @media (max-width: 860px) {
   .hero-grid, .split, .method-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-grid { grid-template-areas: 'kopf' 'foto' 'rest'; row-gap: 2.5rem; }
   .hero-grid > div, .split > div { min-width: 0; }
   .hero-h1 br { display: none; }
   .bento { grid-template-columns: 1fr; }
