@@ -218,19 +218,18 @@ section { padding: 5rem 0; }
 .hero {
   background: var(--sand);
   border-bottom: 0.5px solid var(--rule);
-  padding: 5.5rem 0 4.5rem;
+  padding: 0;
   overflow: hidden;
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  grid-template-areas: 'kopf foto' 'rest foto';
-  column-gap: 4rem; row-gap: 0;
-  align-items: center;
+  grid-template-columns: minmax(320px, 42%) 1fr;
+  align-items: stretch;
 }
-.hero-kopf { grid-area: kopf; align-self: end; }
-.hero-rest { grid-area: rest; align-self: start; }
-.hero-grid .hero-photo-wrap { grid-area: foto; }
+.hero-inhalt {
+  padding: 5rem 2.5rem 4rem 4.5rem;
+  max-width: 46rem;
+}
 .hero-eyebrow {
   font-size: 0.62rem; letter-spacing: 0.26em;
   text-transform: uppercase; color: var(--teal-mid);
@@ -583,7 +582,6 @@ footer {
 /* ---- RESPONSIVE ---- */
 @media (max-width: 860px) {
   .hero-grid, .split, .method-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero-grid { grid-template-areas: 'kopf' 'foto' 'rest'; row-gap: 2.5rem; }
   .hero-grid > div, .split > div { min-width: 0; }
   .hero-h1 br { display: none; }
   .bento { grid-template-columns: 1fr; }
@@ -737,9 +735,10 @@ a.nav-logo, a.nav-cta { display: inline-block; }
 .fit-t { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.75; }
 
 /* ---- HERO-FOTO KLEINER ---- */
-.hero-photo-sm { max-width: 330px; margin-left: auto; align-self: center; }
-.hero-photo-sm .hero-photo { aspect-ratio: 3/4; }
-@media (max-width: 860px) { .hero-photo-sm { max-width: 100%; margin-left: 0; } }
+.hero-photo-links .hero-photo { height: 100%; aspect-ratio: auto; min-height: 34rem; }
+@media (max-width: 860px) {
+  .hero-photo-links .hero-photo { aspect-ratio: 4/5; height: auto; min-height: 0; }
+}
 
 /* ---- WEITERLESEN-KARTEN ---- */
 .next-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
@@ -875,4 +874,8 @@ a.nav-logo, a.nav-cta { display: inline-block; }
   .outcome-item:last-child { border-bottom: none; }
   .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stat-l { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+
+  /* Hero auf Mobil: Foto randlos ganz oben, Text darunter mit Innenabstand */
+  .hero-grid { gap: 0; }
+  .hero-inhalt { padding: 2.5rem 2.5rem 3rem; max-width: none; }
 }
