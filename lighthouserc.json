@@ -2,6 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
+      "maxAutodiscoverUrls": 0,
       "numberOfRuns": 2
     },
     "assert": {
