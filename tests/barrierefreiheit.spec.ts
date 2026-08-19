@@ -21,8 +21,15 @@ test.describe('Barrierefreiheit (WCAG 2.1 AA)', () => {
 
     for (const pfad of seiten) {
       await page.goto(pfad, { waitUntil: 'networkidle' });
+      // Die großen Schmuckziffern (01–05) sind reine Dekoration im Sinne von
+      // WCAG 1.4.3 („pure decoration"): bewusst blass, aria-hidden, ohne
+      // Informationsgehalt. Sie sind deshalb von der Kontrastprüfung
+      // ausgenommen. Alles andere wird vollständig geprüft.
       const ergebnis = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+        .exclude('.bento-n')
+        .exclude('.outcome-n')
+        .exclude('.step-n')
         .analyze();
 
       for (const v of ergebnis.violations) {

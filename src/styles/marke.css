@@ -55,7 +55,7 @@
    ============================================= */
 :root {
   --teal:       #1E5A58;
-  --teal-mid:   #2F7C7B;
+  --teal-mid:   #2B716F;
   --teal-bright:#229BA8;
   --teal-dark:  #0F4845;
   --teal-bg:    #E4F4F2;
@@ -67,7 +67,7 @@
   --paper:      #FBFBF8;
   --ink:        #23292B;
   --ink-soft:   #5A6168;
-  --ink-mute:   #8A9A86;
+  --ink-mute:   #657362;
   --rule:       #DDD9D2;
   --serif:      'Plus Jakarta Sans', system-ui, sans-serif;
   --sans:       'Inter', system-ui, sans-serif;
@@ -115,7 +115,7 @@ nav {
 .nav-links a {
   background: none; border: none;
   font-family: var(--sans); font-size: 0.75rem;
-  color: rgba(243,250,250,0.6); cursor: pointer;
+  color: rgba(243,250,250,0.75); cursor: pointer;
   letter-spacing: 0.06em;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px; transition: all 0.18s;
@@ -548,16 +548,16 @@ footer {
 }
 .footer-logo { color: rgba(243,250,250,0.55); font-size: 0.88rem; letter-spacing: 0.1em; }
 .footer-beschreibung {
-  color: rgba(243,250,250,0.4); font-size: 0.78rem;
+  color: rgba(243,250,250,0.58); font-size: 0.78rem;
   line-height: 1.7; max-width: 34ch; margin-top: 0.875rem;
 }
 .footer-titel {
   font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(243,250,250,0.35); margin-bottom: 0.875rem;
+  color: rgba(243,250,250,0.55); margin-bottom: 0.875rem;
 }
 .footer-spalte a {
   display: block;
-  color: rgba(243,250,250,0.5); font-size: 0.8rem;
+  color: rgba(243,250,250,0.62); font-size: 0.8rem;
   font-family: var(--sans); text-decoration: none;
   padding: 0.2rem 0; letter-spacing: 0.02em; transition: color 0.18s;
 }
@@ -569,13 +569,13 @@ footer {
   background: var(--ink); text-align: center;
   padding: 0 2.5rem 0.5rem;
   margin: 0; font-size: 0.62rem; line-height: 1.6;
-  color: rgba(243,250,250,0.28); letter-spacing: 0.02em;
+  color: rgba(243,250,250,0.55); letter-spacing: 0.02em;
 }
 .footer-seo span { display: inline-block; max-width: 780px; }
 .footer-copy {
   background: var(--ink); text-align: center;
   padding: 1rem 2.5rem 1.5rem;
-  font-size: 0.68rem; color: rgba(243,250,250,0.25);
+  font-size: 0.68rem; color: rgba(243,250,250,0.55);
   border-top: 0.5px solid rgba(255,255,255,0.05);
 }
 
