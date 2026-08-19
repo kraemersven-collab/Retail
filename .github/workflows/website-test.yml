@@ -1,0 +1,97 @@
+# Testet die Website vollautomatisch: Layout auf 9 Geräteprofilen, Links,
+# Skriptfehler, Barrierefreiheit (WCAG 2.1 AA) und Ladezeit (Lighthouse).
+# Läuft bei jedem Push auf main, bei Pull Requests, montags als Routinelauf
+# und auf Knopfdruck im Actions-Tab. Screenshots und Berichte liegen nach
+# jedem Lauf als Artefakt bereit.
+#
+# Optional: Unter Settings → Secrets and variables → Variables eine Variable
+# TEST_URL setzen (z. B. https://numana-coaching.de), dann wird die Live-Seite
+# getestet statt des Builds aus dem Repository.
+name: Website-Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 5 * * 1' # montags 05:00 UTC (07:00 MESZ)
+  workflow_dispatch:
+
+jobs:
+  playwright:
+    name: Layout, Links, Barrierefreiheit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Browser installieren
+        run: npx playwright install --with-deps
+
+      - name: Testsuite ausführen
+        run: npm run test:website
+        env:
+          BASE_URL: ${{ vars.TEST_URL }}
+
+      - name: Testbericht als Artefakt sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-bericht
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Screenshots als Artefakt sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
+          retention-days: 30
+
+  lighthouse:
+    name: Ladezeit und Qualität (Lighthouse)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Lighthouse ausführen
+        env:
+          TEST_URL: ${{ vars.TEST_URL }}
+        run: |
+          if [ -n "$TEST_URL" ]; then
+            npx --yes @lhci/cli collect --no-lighthouserc --url="$TEST_URL" --numberOfRuns=2
+            npx --yes @lhci/cli assert --config=lighthouserc.json
+          else
+            npm run build
+            npx --yes @lhci/cli autorun --config=lighthouserc.json
+          fi
+
+      - name: Lighthouse-Ergebnisse als Artefakt sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-ergebnisse
+          path: .lighthouseci/
+          retention-days: 30
