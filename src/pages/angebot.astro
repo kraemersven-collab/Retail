@@ -1,6 +1,9 @@
 ---
 import Basis from '../layouts/Basis.astro';
 
+// Zeeg-Buchungslink für das kostenlose Erstgespräch (Direktlink laut Briefing).
+const ZEEG_URL = 'https://zeeg.me/kraemer/erstgespraech';
+
 const jsonld = [
   {
     '@context': 'https://schema.org',
@@ -61,9 +64,30 @@ const jsonld = [
       <p style="font-size:0.9rem;color:var(--ink-soft);max-width:52ch;margin-top:1.125rem;line-height:1.78">
         numana ist ein strukturierter Prozess mit festem Umfang. Sie wissen von Anfang an, was Sie bekommen, wie lange es dauert und was es kostet.
       </p>
-      <div class="divider"></div>
+    </div>
+  </section>
 
-      <div style="display:grid;grid-template-columns:1.25fr 0.75fr;gap:4rem;align-items:start;margin-top:2rem" class="angebot-grid">
+  <!-- Typische Anliegen (Briefing Design-Update; die sechs Situationen sind
+       verbindlich und werden nicht umformuliert). -->
+  <section class="section-alt">
+    <div class="container" style="max-width:880px">
+      <p class="eyebrow">Typische Anliegen</p>
+      <h2>Woran Sie es merken</h2>
+      <div style="margin-top:2.25rem">
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">Sie führen zum ersten Mal und merken, dass fachliche Stärke allein die neue Rolle noch nicht trägt.</p></div>
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">Sie treffen seit Monaten Entscheidungen, die auf dem Tisch Ihrer Führungskraft liegen müssten, ohne Mandat und ohne Titel.</p></div>
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">In Ihrem Team steht ein Konflikt im Raum, und alle warten darauf, dass Sie ihn lösen.</p></div>
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">Vor Präsentationen und Gremienterminen kostet Sie die Anspannung mehr Kraft als die Vorbereitung.</p></div>
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">Ihre Analysen kommen im Führungskreis an, entschieden wird trotzdem anders.</p></div>
+        <div style="display:flex;gap:1rem;padding:1.1rem 0;border-top:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule)"><span style="color:var(--teal-mid);font-weight:500;flex:0 0 auto">+</span><p style="margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.7">Die Zusammenarbeit mit einem anderen Bereich reibt sich an denselben Stellen, egal was Sie verändern.</p></div>
+      </div>
+      <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:2rem;line-height:1.75">Der erste Schritt ist in allen Fällen derselbe: klären, woran es tatsächlich liegt. Genau dafür ist das <a href={ZEEG_URL} target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Erstgespräch</a> da.</p>
+    </div>
+  </section>
+
+  <section style="padding:5rem 0">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.25fr 0.75fr;gap:4rem;align-items:start" class="angebot-grid">
         <div>
           <div class="tier">
             <div>
@@ -104,7 +128,29 @@ const jsonld = [
       </div>
     </div>
   </section>
+  <!-- Arbeitgeber-Sektion (Briefing 6a; Texte verbindlich, der
+       Vertraulichkeitssatz in Absatz 1 ist Pflicht und wird nicht gekürzt). -->
   <section class="section-alt">
+    <div class="container" style="max-width:880px">
+      <p class="eyebrow">Auch als Weiterbildung über Ihren Arbeitgeber</p>
+      <h2>Viele Unternehmen übernehmen die Kosten</h2>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin-top:1.5rem;line-height:1.78;max-width:64ch">
+        Coaching zu Wirksamkeit und Führung ist in vielen Unternehmen Teil des Weiterbildungsbudgets. Wenn Ihr Arbeitgeber die Kosten übernimmt, ändert sich am Ablauf nichts. Die Rechnung geht an das Unternehmen, die Inhalte der Sitzungen bleiben vertraulich zwischen Ihnen und mir.
+      </p>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin-top:0.875rem;line-height:1.78;max-width:64ch">
+        Für das Gespräch mit Ihrer Führungskraft oder Personalabteilung stelle ich Ihnen ein Argumentationsblatt bereit: Nutzen, Ablauf, Umfang und Kosten auf einer Seite.
+      </p>
+      <p style="font-size:0.9rem;color:var(--ink-soft);margin-top:0.875rem;line-height:1.78;max-width:64ch">
+        Ob privat oder über den Arbeitgeber, das Erstgespräch ist in beiden Fällen kostenlos und unverbindlich.
+      </p>
+      <!-- [FACTSHEET-PDF]: Download-Slot für das Argumentationsblatt.
+           Das Dokument entsteht separat (Skill numana-dokumente) und wird vor
+           dem Launch eingehängt. Bis dahin wird hier bewusst kein Link
+           gerendert, damit kein toter Link live geht. -->
+    </div>
+  </section>
+
+  <section style="padding:5rem 0">
     <div class="container" style="max-width:880px">
       <p class="eyebrow">Methode</p>
       <h2>Womit ich <em>arbeite.</em></h2>
@@ -132,7 +178,7 @@ const jsonld = [
     </div>
   </section>
 
-  <section style="padding:5rem 0">
+  <section class="section-alt">
     <div class="container">
       <p class="eyebrow">Ablauf</p>
       <h2>Fünf Schritte. <em>Fester Umfang.</em></h2>

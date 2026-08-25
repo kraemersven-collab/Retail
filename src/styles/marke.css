@@ -339,6 +339,21 @@ section { padding: 5rem 0; }
   color: var(--ink); line-height: 1.55; margin: 0;
 }
 .bento-item.dark .bento-q { color: rgba(243,250,250,0.85); }
+/* Drei Alltagsszenen (Erkennen Sie sich?) */
+.bento-szenen {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem; margin-top: 2.5rem;
+}
+.bento-szene { display: flex; gap: 0.9rem; }
+.bento-szene-plus { color: var(--teal-mid); font-weight: 500; flex: 0 0 auto; }
+.bento-szene p {
+  margin: 0; font-size: 0.92rem;
+  color: var(--ink-soft); line-height: 1.75;
+}
+@media (max-width: 860px) {
+  .bento-szenen { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
 .bento-erkl {
   font-size: 0.85rem; color: var(--ink-soft);
   line-height: 1.6; margin: 0.5rem 0 0;

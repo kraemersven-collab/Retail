@@ -1,0 +1,48 @@
+---
+/*
+  Drei-Karten-Sektion für das Diagnose-Instrument (Form · Position · Botschaft).
+
+  WICHTIG — NICHT EINBINDEN (Briefing Design-Update, Punkt 5):
+  Diese Komponente wird vorbereitet, aber von keiner Seite importiert oder
+  gerendert, bis die fachliche Prüfung des Instruments abgeschlossen ist und
+  die Freigabe ausdrücklich erfolgt. Bis dahin gilt das Embargo für die
+  Nennung von „Form, Position, Botschaft" und „das numana-Prinzip" auf
+  ausgelieferten Seiten.
+
+  Einbindung nach Freigabe:
+    import DiagnoseKarten from '../components/DiagnoseKarten.astro';
+    <DiagnoseKarten />
+*/
+---
+
+<section style="padding:5rem 0">
+  <div class="container" style="max-width:1000px">
+    <p class="eyebrow">Das Diagnose-Instrument</p>
+    <h2>Woran lag es <em>tatsächlich?</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem" class="diagnose-karten">
+      <div style="background:var(--teal-bg);padding:2rem 1.75rem">
+        <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:0.75rem">Form</p>
+        <h3 style="color:var(--teal);margin-bottom:0.6rem">Lag es an der Form?</h3>
+        <p style="font-size:0.88rem;color:var(--ink-soft);line-height:1.7;margin:0">Wie etwas gesagt wird: Zeitpunkt, Aufbau, Tonlage. Oft der erste Verdacht und selten die ganze Antwort.</p>
+      </div>
+      <div style="background:var(--teal-dark);padding:2rem 1.75rem">
+        <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--brand-rule);margin-bottom:0.75rem">Position</p>
+        <h3 style="color:var(--teal-soft);margin-bottom:0.6rem">Lag es an der Position?</h3>
+        <p style="font-size:0.88rem;color:var(--teal-soft);opacity:0.85;line-height:1.7;margin:0">Von wo aus Sie sprechen: Rolle, Mandat, Standing im Raum. Manche Botschaft braucht vor allem einen anderen Absender.</p>
+      </div>
+      <div style="background:var(--sand);border:0.5px solid var(--rule);padding:2rem 1.75rem">
+        <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:0.75rem">Botschaft</p>
+        <h3 style="color:var(--teal);margin-bottom:0.6rem">Lag es an der Botschaft selbst?</h3>
+        <p style="font-size:0.88rem;color:var(--ink-soft);line-height:1.7;margin:0">Was gesagt wird: Inhalt, Zumutung, Konsequenz. Diese Unterscheidung entscheidet, wo Anstrengung Ertrag bringt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 860px) {
+    .diagnose-karten {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
