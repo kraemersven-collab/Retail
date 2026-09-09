@@ -58,6 +58,14 @@ const jsonld = [
       },
       {
         '@type': 'Question',
+        name: 'Muss mein Arbeitgeber erfahren, worum es in den Sitzungen geht?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Wenn Ihr Arbeitgeber die Kosten übernimmt, ändert sich am Ablauf nichts. Die Rechnung geht an das Unternehmen, die Inhalte der Sitzungen bleiben vertraulich zwischen Ihnen und mir.',
+        },
+      },
+      {
+        '@type': 'Question',
         name: 'Warum ausgerechnet Sie?',
         acceptedAnswer: {
           '@type': 'Answer',
@@ -129,7 +137,7 @@ const jsonld = [
   <section style="padding:5rem 0" class="section-alt">
     <div class="container">
       <div style="max-width:760px">
-      <p class="eyebrow">Vier Fragen an Corinna</p>
+      <p class="eyebrow">Fünf Fragen an Corinna</p>
       <h2>Im Gespräch.<br /><em>Ohne Umschweife.</em></h2>
       <div class="faq-list">
         <div class="faq-item">
@@ -145,15 +153,23 @@ const jsonld = [
           <p class="faq-a">Dann ist das ein Ergebnis. Bleiben aus geklärten Gründen ist etwas anderes als Bleiben aus Unentschiedenheit.</p>
         </div>
         <div class="faq-item">
+          <p class="faq-q">Muss mein Arbeitgeber erfahren, worum es in den Sitzungen geht?</p>
+          <p class="faq-a">Wenn Ihr Arbeitgeber die Kosten übernimmt, ändert sich am Ablauf nichts. Die Rechnung geht an das Unternehmen, die Inhalte der Sitzungen bleiben vertraulich zwischen Ihnen und mir.</p>
+        </div>
+        <div class="faq-item">
           <p class="faq-q">Warum ausgerechnet Sie?</p>
           <p class="faq-a">Weil ich diese Entscheidungen aus eigener Erfahrung kenne. Ich habe geführt, Zahlen verantwortet, Prokura gehabt. Ich weiß, was die Führungsfrage bedeutet und was sie kostet. Ich habe nach 25 Jahren die Richtung gewechselt und mich nach zwei Jahren Abwägen selbständig gemacht. Nichts davon habe ich gelesen. Ich habe es entschieden.</p>
         </div>
       </div>
 
-      <!-- Seitenabschluss laut Briefing v2, Punkt 9: nüchterne Abgrenzung
-           zur Therapie und ein Weg zum Erstgespräch. -->
+      <!-- Seitenabschluss laut Briefing v3, Punkt 9: Der letzte Absatz gehört
+           der Leserin, danach die nüchterne Abgrenzung zur Therapie und der
+           Weg zum Erstgespräch. -->
       <div style="margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--rule)">
-        <p style="font-size:0.85rem;color:var(--ink-soft);line-height:1.75;max-width:64ch">
+        <p style="font-size:0.9rem;color:var(--ink-soft);line-height:1.78;max-width:64ch">
+          Was das für die Arbeit mit mir bedeutet: Die Geschichte, um die es geht, ist Ihre. Sie treffen die Entscheidung und gehen den Weg. Ich bringe Struktur, Diagnostik und die Erfahrung aus der Welt mit, in der Sie arbeiten, und sorge dafür, dass Sie klar sehen, woran Sie sind. Der einfachste Anfang ist das Erstgespräch: 30 Minuten, kostenlos.
+        </p>
+        <p style="font-size:0.85rem;color:var(--ink-soft);line-height:1.75;max-width:64ch;margin-top:1rem">
           Coaching ist Beratung zur beruflichen und persönlichen Entwicklung, keine Psychotherapie und kein Ersatz dafür. Was das im Einzelnen bedeutet, steht auf der Kontaktseite.
         </p>
         <div style="margin-top:1.5rem">
