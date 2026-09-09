@@ -667,8 +667,10 @@ footer {
 }
 .hero-sub-em {
   color: var(--teal-dark) !important;
-  font-size: 1.05rem !important;
+  font-size: 0.95rem !important;
   line-height: 1.65 !important;
+  padding-left: 1rem;
+  border-left: 1px solid var(--sand-acc);
 }
 
 /* ---- ANGEBOT ZUSATZ ---- */
