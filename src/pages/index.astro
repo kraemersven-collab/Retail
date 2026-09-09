@@ -1,8 +1,6 @@
 ---
 import Basis from '../layouts/Basis.astro';
 
-// Zeeg-Buchungslink für das kostenlose Erstgespräch (Direktlink laut Briefing).
-const ZEEG_URL = 'https://zeeg.me/kraemer/erstgespraech';
 
 const jsonld = [
   {
@@ -115,21 +113,6 @@ const jsonld = [
           <p class="bento-erkl">Die Frage hinter den anderen vier. Und die einzige, die sich mit keiner Tabelle beantworten lässt.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Erkennen Sie sich? (Briefing Design-Update; die drei Szenen sind
-       verbindlich und werden nicht umformuliert). -->
-  <section class="section-alt">
-    <div class="container" style="max-width:1000px">
-      <p class="eyebrow">Aus dem Alltag</p>
-      <h2>Erkennen Sie <em>sich?</em></h2>
-      <div class="bento-szenen">
-        <div class="bento-szene"><span class="bento-szene-plus">+</span><p>Sie haben die Zahlen dreimal geprüft. Der Führungskreis entscheidet trotzdem anders.</p></div>
-        <div class="bento-szene"><span class="bento-szene-plus">+</span><p>Ein Externer sagt dasselbe wie Sie. Diesmal wird es angenommen.</p></div>
-        <div class="bento-szene"><span class="bento-szene-plus">+</span><p>Sie haben die Form längst variiert. Schriftlich, vorab abgestimmt, im richtigen Moment. Das Ergebnis blieb gleich.</p></div>
-      </div>
-      <p style="font-size:0.88rem;color:var(--ink-soft);margin-top:2.25rem;line-height:1.75">Wenn Sie sich hier wiederfinden, lohnt ein <a href={ZEEG_URL} target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Erstgespräch</a>.</p>
     </div>
   </section>
 
